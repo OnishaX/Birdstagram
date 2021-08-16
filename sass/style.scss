@@ -17,12 +17,12 @@ body {
 }
 #backdrop {
   top: 0em;
-width: 100%;
+  width: 100%;
   position: absolute;
   z-index: -100;
   #topBar {
     width: 100%;
-    padding: 2em;
+    padding: 1.4em;
     background: rgba(27, 64, 54, 1);
   }
 }
@@ -38,7 +38,7 @@ width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.2em;
   order: 1;
   background: rgba(27, 64, 54, 0.9);
   backdrop-filter: blur(10px);
@@ -58,15 +58,16 @@ width: 100%;
   font-family: SF Pro Text;
   font-style: normal;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
   color: #ffffff;
 }
+
 .iconButton {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1em;
+  padding: 0.75em;
   flex: none;
   flex-grow: 0;
 }
@@ -74,7 +75,7 @@ width: 100%;
   font-family: SF Pro Text;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.5em;
+  font-size: 1em;
   display: flex;
   align-items: center;
 }
@@ -95,7 +96,7 @@ width: 100%;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding: 0.5em;
+  padding: 0.2em;
   .icon {
     color: #1b4036;
   }
@@ -105,7 +106,7 @@ width: 100%;
     font-family: SF Pro Text;
     font-style: normal;
     font-weight: 500;
-    font-size: 1em;
+    font-size: 0.8em;
     text-align: center;
     flex: none;
     order: 1;
@@ -132,7 +133,6 @@ width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: url(../images/TeTuatahianui.jpg);
   backdrop-filter: blur(80px);
   border-radius: 1em;
   box-shadow: 0px -0.5px 0px rgba(0, 0, 0, 0.3);
@@ -147,7 +147,6 @@ width: 100%;
     align-items: center;
     flex: 1 1 auto;
     flex-grow: 1;
-    background: url(../images/TeTuatahianui.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -177,16 +176,14 @@ width: 100%;
       align-items: flex-start;
       padding: 0px;
       flex: none;
-      order: 1;
       align-self: stretch;
       flex-grow: 0;
 
-      .metaPostLeft {
+      .metaLeft {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         flex: none;
-        order: 1;
         align-self: stretch;
         flex-grow: 1;
         .title {
@@ -196,7 +193,15 @@ width: 100%;
           font-size: 2em;
           color: #000000;
           flex: none;
-          order: 1;
+          flex-grow: 0;
+        }
+        .title2 {
+          font-family: SF Pro Text;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 1em;
+          color: #000000;
+          flex: none;
           flex-grow: 0;
         }
         .subtitle {
@@ -206,17 +211,15 @@ width: 100%;
           font-size: 1em;
           color: rgba(60, 60, 67, 0.6);
           flex: none;
-          order: 1;
           flex-grow: 0;
         }
       }
-      .metaPostRight {
+      .metaRight {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: flex-end;
         flex: none;
-        order: 1;
         align-self: stretch;
         flex-grow: 1;
         .subtitle {
@@ -226,7 +229,6 @@ width: 100%;
           font-size: 1em;
           color: rgba(60, 60, 67, 0.6);
           flex: none;
-          order: 1;
           flex-grow: 0;
         }
       }
@@ -234,5 +236,14 @@ width: 100%;
   }
 }
 hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
   background: #c6c6c8;
+  height: 0.1em;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 1;
 }
