@@ -257,6 +257,7 @@ body {
       flex-grow: 1;
   background: url(../images/TeTuatahianui.jpg);
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   -webkit-box-flex: 0;
       -ms-flex: none;
@@ -405,6 +406,22 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.post .meta .metaPost .metaPostRight .subtitle {
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  color: rgba(60, 60, 67, 0.6);
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
 }
 
 hr {
