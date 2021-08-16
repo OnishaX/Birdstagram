@@ -149,6 +149,7 @@ width: 100%;
     flex-grow: 1;
     background: url(../images/TeTuatahianui.jpg);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     flex: none;
     min-height: 20em;
@@ -218,6 +219,16 @@ width: 100%;
         order: 1;
         align-self: stretch;
         flex-grow: 1;
+        .subtitle {
+          font-family: SF Pro Text;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1em;
+          color: rgba(60, 60, 67, 0.6);
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+        }
       }
     }
   }
