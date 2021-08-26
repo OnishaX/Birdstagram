@@ -1,0 +1,19 @@
+{
+  "name": "birdstagram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnishaX/Birdstagram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OnishaX/Birdstagram/issues"
+  },
+  "homepage": "https://github.com/OnishaX/Birdstagram#readme"
+}

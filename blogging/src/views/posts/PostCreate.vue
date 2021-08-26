@@ -1,60 +1,78 @@
 <template>
-  <div>
-    <h2>Create a Post</h2>
-    <div class="Neon Neon-theme-dragdropbox">
-      <input
-        style="
-          z-index: 999;
-          opacity: 0;
-          width: 320px;
-          height: 8.5em;
-          position: absolute;
-          right: 0px;
-          left: 0px;
-          margin-right: auto;
-          margin-left: auto;
-        "
-        name="files[]"
-        id="filer_input2"
-        multiple="multiple"
-        type="file"
-      />
-      <div class="Neon-input-dragDrop">
-        <div class="Neon-input-inner">
-          <div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div>
-          <div class="Neon-input-text">
-            <h3>Upload Image</h3>
+  <section>
+    <div class="image-upload">
+      <div class="Neon Neon-theme-dragdropbox">
+        <input
+          style="
+            z-index: 999;
+            opacity: 0;
+            width: 320px;
+            height: 8.5em;
+            position: absolute;
+            right: 0px;
+            left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+          "
+          name="files[]"
+          id="filer_input2"
+          multiple="multiple"
+          type="file"
+        />
+        <div class="Neon-input-dragDrop">
+          <div class="Neon-input-inner">
+            <div class="Neon-input-icon">
+              <i class="fa fa-file-image-o"></i>
+            </div>
+            <div class="Neon-input-text">
+              <h3>Upload Image</h3>
+            </div>
+            <br />
+            <a class="Neon-input-choose-btn blue">Browse Files</a>
           </div>
-          <br />
-          <a class="Neon-input-choose-btn blue">Browse Files</a>
         </div>
       </div>
     </div>
 
-    <form @submit.prevent="postPost">
-      <div class="formgroup">
-        <label for="title">Species</label>
-        <input v-model="title" type="text" name="species" id="species" />
-      </div>
-      <div class="formgroup">
-        <label for="author">Author</label>
-        <input v-model="author" type="text" name="author" id="author" />
-      </div>
-      <div class="formgroup">
-        <label for="description">Description</label>
-        <textarea
-          v-model="description"
-          type="text"
-          name="description"
-          id="description"
-          cols="20"
-          rows="5"
-        >
-        </textarea>
-      </div>
-      <button type="submit">Create Post</button>
-    </form>
-  </div>
+    <div class="user-info">
+      <form @submit.prevent="postPost">
+        <div class="formgroup">
+          <label for="title"></label>
+          <input
+            v-model="species"
+            type="text"
+            name="species"
+            id="species"
+            placeholder="Species"
+          />
+        </div>
+        <div class="formgroup">
+          <label for="author"></label>
+          <input
+            v-model="author"
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Author"
+          />
+        </div>
+        <div class="formgroup">
+          <label for="description"></label>
+          <textarea
+            v-model="description"
+            type="text"
+            name="description"
+            id="description"
+            cols="20"
+            rows="10"
+            placeholder="Description"
+          >
+          </textarea>
+        </div>
+        <button type="submit">Create Post</button>
+      </form>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -71,8 +89,8 @@ export default {
   methods: {
     async postPost() {
       const post = {};
-      post.title = this.title;
-      post.body = this.body;
+      post.title = this.species;
+      post.description = this.description;
       if (this.author) {
         post.author = this.author;
       }
@@ -81,7 +99,7 @@ export default {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          title: this.title,
+          species: this.species,
           author: this.author,
           description: this.description,
         }),
@@ -95,7 +113,61 @@ export default {
 
 <style scoped>
 .formgroup {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  
+}
+
+.formgroup input {
+  font-size: 1.1em;
+  width: 90%;
+  height: 3em;
+  border: none;
+  border-bottom: thin rgb(187, 187, 187) solid;
+  outline: none;
+}
+
+.formgroup textarea {
+  font-size: 1.1em;
+  outline: none;
+  width: 90%;
+  height: 8em;
+  border: none;
+  border-bottom: thin rgb(187, 187, 187) solid;
+}
+
+section {
+  display: flex;
+  height: 90vh;
+}
+
+.image-upload {
+  background-color: #eeeeee;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.user-info {
+  background-color: white;
+  padding: 1em;
+  width: 50%;
+  position: relative;
+}
+
+button {
+  font-size: 1.15em;
+  color: white;
+  border-radius: 1em;
+  border: none;
+  background-color: #1b4036;
+  margin: 1em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 95%;
+  height: 3em;
 }
 
 .Neon {
@@ -112,13 +184,13 @@ export default {
 }
 .Neon-input-dragDrop {
   display: block;
+  border-radius: 1em;
   width: 343px;
   margin: 0 auto 25px auto;
   padding: 25px;
-  color: #8d9499;
-  color: #97a1a8;
+  color: #285e4f;
   background: #fff;
-  border: 2px dashed #c8cbce;
+  border: thin dotted #3b7062;
   text-align: center;
   -webkit-transition: box-shadow 0.3s, border-color 0.3s;
   -moz-transition: box-shadow 0.3s, border-color 0.3s;
@@ -139,8 +211,9 @@ export default {
   font-size: 12px;
 }
 .Neon-input-choose-btn.blue {
-  color: #41794d;
-  border: 1px solid #76b69b;
+  color: #1b4036;
+  border: thin solid #1b4036;
+  border-radius: 1em;
 }
 .Neon-input-choose-btn {
   display: inline-block;
@@ -152,7 +225,7 @@ export default {
   white-space: nowrap;
   font-size: 12px;
   font-weight: bold;
-  color: #8d9496;
+  color: #1b4036;
   border-radius: 3px;
   border: 1px solid #c6c6c6;
   vertical-align: middle;
