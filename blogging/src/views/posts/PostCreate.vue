@@ -6,13 +6,14 @@
           style="
             z-index: 999;
             opacity: 0;
-            width: 320px;
+            width: 20em;
             height: 8.5em;
             position: absolute;
             right: 0px;
             left: 0px;
             margin-right: auto;
             margin-left: auto;
+            cursor: pointer;
           "
           name="files[]"
           id="filer_input2"
@@ -69,7 +70,10 @@
           >
           </textarea>
         </div>
-        <button type="submit">Create Post</button>
+
+        <div class="formgroup">
+          <button type="submit">Create Post</button>
+        </div>
       </form>
     </div>
   </section>
@@ -88,13 +92,6 @@ export default {
   },
   methods: {
     async postPost() {
-      const post = {};
-      post.title = this.species;
-      post.description = this.description;
-      if (this.author) {
-        post.author = this.author;
-      }
-
       const response = await fetch("http://localhost:3000/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -105,6 +102,7 @@ export default {
         }),
       });
       const data = await response.json();
+      console.log(data);
       this.$emit("posted");
     },
   },
@@ -114,7 +112,7 @@ export default {
 <style scoped>
 .formgroup {
   margin-bottom: 2em;
-  
+  display: block;
 }
 
 .formgroup input {
@@ -138,6 +136,7 @@ export default {
 section {
   display: flex;
   height: 90vh;
+  width: 100vw;
 }
 
 .image-upload {
@@ -157,17 +156,18 @@ section {
 }
 
 button {
+  cursor: pointer;
   font-size: 1.15em;
   color: white;
   border-radius: 1em;
-  border: none;
   background-color: #1b4036;
-  margin: 1em;
+  border: none;
   position: absolute;
   bottom: 0;
   left: 0;
-  min-width: 95%;
+  margin: 0 2em 0 1.5em;
   height: 3em;
+  width: 90%;
 }
 
 .Neon {

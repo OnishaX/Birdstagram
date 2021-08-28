@@ -3,7 +3,8 @@
 <header> </header>
 
   <div id="nav">
-    <router-link :to="{name: 'Home'}">Feed</router-link> /
+    <router-link :to="{name: 'Home'}">WELCOME</router-link> /
+    <router-link :to="{name: 'PostList'}">Newsfeed</router-link> /
     <router-link :to="{name: 'PostList'}">Create a Post</router-link> /
     <router-link :to="{name: 'About'}">About</router-link> 
     <!-- <router-link :to="{name: 'Register'}">Register</router-link> -->
@@ -12,6 +13,13 @@
 </template>
 
 <style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,6 +40,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #4bac7b;
+  color: #428b67;
 }
 </style>

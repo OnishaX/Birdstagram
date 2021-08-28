@@ -1,7 +1,6 @@
 <template>
   <section>
     <PostCreate />
-    
   </section>
 </template>
 
@@ -17,5 +16,4 @@ export default {
 </script>
 
 <style>
-
 </style>

@@ -2,12 +2,12 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue';
 import About from '../views/About.vue'
 import PostList from '../views/posts/PostList.vue'
-// import PostCreate from '../views/posts/PostCreate'
-import Register from '../views/user/Register.vue'
+// import PostCreate from '../views/posts/PostCreate.vue'
+// import Register from '../views/user/Register.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home
   },
@@ -17,20 +17,20 @@ const routes = [
     component: About
   },
   {
-    path: '/register',
-    name: 'Register',
-    component: Register
-  },
-  {
     path: '/posts',
     name: 'PostList',
     component: PostList
-  }
+  },
   // {
-  //   path: '/postCreate',
+  //   path: '/post-create',
   //   name: 'PostCreate',
   //   component: PostCreate
   // }
+    // {
+  //   path: '/register',
+  //   name: 'Register',
+  //   component: Register
+  // },
 ]
 
 const router = createRouter({
