@@ -30,10 +30,10 @@ section {
 
 section:hover {
   color: white;
-  border-radius: 15em;
-  width:40vw;
-  height:40vw;
-  transition: 4s ease all;
+  border-radius: 20em;
+  width:30vw;
+  height:30vw;
+  transition: 3s ease all;
   background-color: rgb(43, 70, 59);
 }
 
