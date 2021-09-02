@@ -3,7 +3,7 @@
   <section>
     <PostCreate />
     
-    <button @click="getPosts">Get Posts</button>
+    <!-- <button @click="getPosts">Get Posts</button> -->
     
   </section>
 </template>
